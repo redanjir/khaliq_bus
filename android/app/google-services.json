@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "232094488192",
+    "project_id": "khaliqbus",
+    "storage_bucket": "khaliqbus.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:232094488192:android:07713480276f3a039f7865",
+        "android_client_info": {
+          "package_name": "com.example.khaliq_bus"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApK9t3x3vehE7GJgEOy1grWT1wJl74KC8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
