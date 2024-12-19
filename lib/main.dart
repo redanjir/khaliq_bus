@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:khaliq_bus/firebase_options.dart';
 import 'package:get/get.dart';
-import 'package:khaliq_bus/screens/AboutusPage.dart';
-import 'package:khaliq_bus/screens/FavouritesPage.dart';
-import 'package:khaliq_bus/screens/ProfilePage.dart';
-import 'package:khaliq_bus/screens/SearchPage.dart';
+import 'screens/AboutusPage.dart';
+import 'screens/FavouritesPage.dart';
+import 'screens/ProfilePage.dart';
+import 'screens/SearchPage.dart';
 import 'screens/HomePage.dart';
 import 'screens/LoginPage.dart';
 import 'screens/RegisterPage.dart';
@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
       title: 'Khaliq Bus',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: const HomePage(),
+      home: const WelcomePage(),
       getPages: [
         GetPage(name: '/welcome', page: () => const WelcomePage()),
         GetPage(name: '/home', page: () => const HomePage()),
