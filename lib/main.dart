@@ -8,7 +8,6 @@ import 'screens/ProfilePage.dart';
 import 'screens/SearchPage.dart';
 import 'screens/HomePage.dart';
 import 'screens/LoginPage.dart';
-import 'screens/RegisterPage.dart';
 import 'screens/WelcomePage.dart';
 
 Future<void> main() async{
@@ -34,8 +33,7 @@ class MyApp extends StatelessWidget {
       getPages: [
         GetPage(name: '/welcome', page: () => const WelcomePage()),
         GetPage(name: '/home', page: () => const HomePage()),
-        GetPage(name: '/login', page: () => const LoginPage(), transition: Transition.leftToRight),
-        GetPage(name: '/register', page: () => const RegisterPage()),
+        GetPage(name: '/login', page: () => const LoginPage(), transition: Transition.rightToLeft),
         GetPage(name: '/profile', page: () => const ProfilePage()),
         GetPage(name: '/favourites', page: () => const FavouritesPage()),
         GetPage(name: '/search', page: () => const SearchPage()),

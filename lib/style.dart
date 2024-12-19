@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 const LargeTextSize = 45.0;
-const MediumTextSize = 23.0;
+const MediumTextSize = 25.0;
 const SmallTextSize = 15.0;
 const BodyTextSize = 17.0;
 const ButtonTextSize = 16.0;
@@ -17,8 +17,8 @@ const String LogoApp = 'Gelasio';
 const AppBarTextStyle = TextStyle(
   fontFamily: BodyFont,
   fontWeight: FontWeight.w600,
-  fontSize: LargeTextSize,
-  color: Colors.white,
+  fontSize: MediumTextSize,
+  color: darkblue,
 );
 
 const AppLogoTextStyle = TextStyle(
@@ -32,6 +32,20 @@ const BodyTextStyle = TextStyle(
   fontFamily: BodyFont,
   fontWeight: FontWeight.w400,
   fontSize: BodyTextSize,
+  color: blue,
+);
+
+const LinkTextStyle = TextStyle(
+  fontFamily: BodyFont,
+  fontWeight: FontWeight.w400,
+  fontSize: BodyTextSize,
+  color: darkblue,
+);
+
+const labelTextStyle = TextStyle(
+  fontFamily: BodyFont,
+  fontWeight: FontWeight.bold,
+  fontSize: SmallTextSize,
   color: darkblue,
 );
  

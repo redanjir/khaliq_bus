@@ -38,7 +38,10 @@ class WelcomePage extends StatelessWidget {
             Align(
               alignment: Alignment.bottomCenter,
               child: InkResponse(
-                child: const BlueButton(text: 'LETS START',),
+                child:  Container(
+                  margin: const EdgeInsets.fromLTRB(0, 0, 0, 20),
+                  child:  const BlueButton(text: 'LETS START',)
+                ),
                 onTap: () {
                   Get.toNamed('/login');
                 },

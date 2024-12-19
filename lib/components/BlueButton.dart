@@ -8,9 +8,8 @@ class BlueButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.fromLTRB(0, 0, 0, 20),
       height: 50,
-      width: 300,
+      width: 350,
       decoration: const BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(5)),
         color: darkblue
