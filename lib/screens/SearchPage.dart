@@ -36,6 +36,7 @@ class _SearchPageState extends State<SearchPage> {
       child: Scaffold(
         appBar: AppBar(
           title: const Text('Search'),
+          automaticallyImplyLeading: false,
         ),
         bottomNavigationBar: const AppNavigationBar(),
         body: Text('Search'),
