@@ -54,9 +54,9 @@ class _LoginPageState extends State<LoginPage> {
                       debugPrint('Your newuser is null');
 
                     if(newuser !=null){
-                      debugPrint('$newuser');
+                      // debugPrint('$newuser');
                       debugPrint('SignUp successfull');
-                      Get.off(() => const HomePage());
+                      Get.offAll(() => const HomePage());
                     }
                   }else{
                       var reguser = await FirebaseAuthService().signIn(
@@ -67,7 +67,7 @@ class _LoginPageState extends State<LoginPage> {
                       debugPrint('Your reguser is null');
                       if(reguser !=null){
                         debugPrint('Sign In successfull');
-                        Get.off(() => const HomePage());
+                        Get.offAll(() => const HomePage());
                       }
                     }
                   },

@@ -1,8 +1,10 @@
-import 'dart:async';
+// ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:khaliq_bus/components/NavigationBar.dart';
 import 'package:khaliq_bus/services/httpservice.dart';
+import 'package:khaliq_bus/utils/Debouncer.dart';
+// ignore: library_prefixes
 import '../models/BusStops.dart' as busStop;
 
 class HomePage extends StatefulWidget {
@@ -12,23 +14,8 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 } 
 
-class Debouncer{
-  final int? msecond;
-  VoidCallback ? action;
-  Timer? _timer;
-
-  Debouncer({required this.msecond});
-  run(VoidCallback action){
-    if(null != _timer){
-      _timer!.cancel();
-    }
-
-    _timer = Timer(Duration(milliseconds: msecond!), action);
-  }
-}
-
 class _HomePageState extends State<HomePage> {
-  final debouncer = Debouncer(msecond: 1000);
+  final debouncer =  Debouncer(msecond: 1000);
   List<busStop.Value>? _bs;
   bool? _loading;
 
@@ -52,6 +39,7 @@ class _HomePageState extends State<HomePage> {
         appBar: AppBar(
           title: const Text('HomePage'),
         ),
+        bottomNavigationBar: const AppNavigationBar(),
         body: InkResponse(
           onTap: (){
             for (var busStop in _bs!.toList()) {

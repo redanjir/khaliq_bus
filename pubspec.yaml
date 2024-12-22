@@ -42,7 +42,8 @@ dependencies:
   get: ^4.6.5
   http: 
   google_fonts: 
-
+  iconsax:
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter

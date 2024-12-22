@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:khaliq_bus/controllers/NavigationController.dart';
 import 'package:khaliq_bus/firebase_options.dart';
 import 'package:get/get.dart';
 import 'screens/AboutusPage.dart';
@@ -11,6 +12,9 @@ import 'screens/LoginPage.dart';
 import 'screens/WelcomePage.dart';
 
 Future<void> main() async{
+  //Controllers
+  Get.put(NavigationController());
+
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
