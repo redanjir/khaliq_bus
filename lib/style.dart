@@ -6,6 +6,7 @@ const SmallTextSize = 15.0;
 const BodyTextSize = 17.0;
 const ButtonTextSize = 16.0;
 
+const white = Color.fromRGBO(255, 255, 255, 1);
 const lightblue = Color.fromRGBO(241, 249, 255, 1);
 const midblue = Color.fromRGBO(188, 224, 253, 1);
 const blue = Color.fromRGBO(127, 196, 253, 1);
@@ -56,23 +57,9 @@ const ButtonTextStyle = TextStyle(
   color: Colors.white,
 );
 
-const AppFont = TextStyle(
-  fontFamily: LogoApp,
-  fontWeight: FontWeight.bold,
-  fontSize: MediumTextSize,
-  color: Colors.black,
-);
-
-const TFTextStyle = TextStyle(
+const DrawerHeaderTextStyle = TextStyle( 
   fontFamily: BodyFont,
   fontWeight: FontWeight.w600,
-  fontSize: ButtonTextSize,
-  color: Colors.black,
-);
-
-const RBTextStyle = TextStyle(
-  fontFamily: BodyFont,
-  fontWeight: FontWeight.w600,
-  fontSize: SmallTextSize,
-  color: Colors.black,
+  fontSize: 20,
+  color: Colors.white,
 );

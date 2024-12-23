@@ -1,19 +1,37 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
+import 'package:khaliq_bus/components/BlueDrawer.dart';
 import 'package:khaliq_bus/components/NavigationBar.dart';
+import 'package:khaliq_bus/style.dart';
 
 class FavouritesPage extends StatelessWidget {
   const FavouritesPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
+ return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Favourites'),
+          centerTitle: true,
+          title: const Text('Favourites', style: AppBarTextStyle,),
           automaticallyImplyLeading: false,
+          leading: Builder(
+            builder: (context) {
+              return IconButton(
+                icon: const Icon(Icons.menu, color: darkblue,),
+                onPressed: () {
+                  Scaffold.of(context).openDrawer();
+                },
+              );
+            },
+          ),
+          elevation: 0,
+          backgroundColor: Colors.transparent,
         ),
+        drawer: BlueDrawer(),
         bottomNavigationBar: const AppNavigationBar(),
-        body: Text('Favourites'),
+        body: const Text('Favourites'),
       ),
     );
   }

@@ -1,47 +1,37 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
+import 'package:khaliq_bus/components/BlueDrawer.dart';
 import 'package:khaliq_bus/components/NavigationBar.dart';
+import 'package:khaliq_bus/style.dart';
 
 class NearbyPage extends StatelessWidget {
   const NearbyPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
+return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Near by bus'),
+          centerTitle: true,
+          title: const Text('Nearby Bus Stops', style: AppBarTextStyle,),
           automaticallyImplyLeading: false,
-        ),
-        drawer: Drawer(
-           child: ListView(
-            // Important: Remove any padding from the ListView.
-            padding: EdgeInsets.zero,
-            children: [
-              const DrawerHeader(
-                decoration: BoxDecoration(
-                  color: Colors.blue,
-                ),
-                child: Text('Drawer Header'),
-              ),
-              ListTile(
-                title: const Text('Item 1'),
-                onTap: () {
-                  // Update the state of the app.
-                  // ...
+          leading: Builder(
+            builder: (context) {
+              return IconButton(
+                icon: const Icon(Icons.menu, color: darkblue,),
+                onPressed: () {
+                  Scaffold.of(context).openDrawer();
                 },
-              ),
-              ListTile(
-                title: const Text('Item 2'),
-                onTap: () {
-                  // Update the state of the app.
-                  // ...
-                },
-              ),
-            ],
+              );
+            },
           ),
+          elevation: 0,
+          backgroundColor: Colors.transparent,
         ),
+        drawer: BlueDrawer(),
         bottomNavigationBar: const AppNavigationBar(),
-        body: Text('Near by bus'),
+        body: const Text('Home'),
       ),
     );
   }

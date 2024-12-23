@@ -29,7 +29,7 @@ class AppNavigationBar extends StatelessWidget {
             elevation: 0,
             onDestinationSelected: (index){
               navController.selectedIndex.value = index;
-              Get.to(navController.screens[navController.selectedIndex.value], transition: Transition.noTransition);
+              Get.offAll(navController.screens[navController.selectedIndex.value], transition: Transition.noTransition);
             },
             destinations:  [
               NavigationDestination(
@@ -47,6 +47,9 @@ class AppNavigationBar extends StatelessWidget {
               NavigationDestination(
                icon: Icon(Icons.person,
                color: navController.selectedIndex.value == 4 ? darkblue : blue ,), label: 'Profile'),
+              NavigationDestination(
+               icon: Icon(Icons.phone,
+               color: navController.selectedIndex.value == 5 ? darkblue : blue ,), label: 'About Us'),
             ],
           ),
         ),

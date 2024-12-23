@@ -1,6 +1,10 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
+import 'package:khaliq_bus/components/BlueDrawer.dart';
 import 'package:khaliq_bus/components/NavigationBar.dart';
 import 'package:khaliq_bus/services/httpservice.dart';
+import 'package:khaliq_bus/style.dart';
 import 'package:khaliq_bus/utils/Debouncer.dart';
 // ignore: library_prefixes
 import '../models/BusStops.dart' as busStop;
@@ -32,14 +36,28 @@ class _SearchPageState extends State<SearchPage> {
   
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
+     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Search'),
+          centerTitle: true,
+          title: const Text('Search', style: AppBarTextStyle,),
           automaticallyImplyLeading: false,
+          leading: Builder(
+            builder: (context) {
+              return IconButton(
+                icon: const Icon(Icons.menu, color: darkblue,),
+                onPressed: () {
+                  Scaffold.of(context).openDrawer();
+                },
+              );
+            },
+          ),
+          elevation: 0,
+          backgroundColor: Colors.transparent,
         ),
+        drawer: BlueDrawer(),
         bottomNavigationBar: const AppNavigationBar(),
-        body: Text('Search'),
+        body: const Text('Search'),
       ),
     );
   }

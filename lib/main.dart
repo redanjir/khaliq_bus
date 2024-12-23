@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:khaliq_bus/controllers/NavigationController.dart';
@@ -33,7 +34,8 @@ class MyApp extends StatelessWidget {
       title: 'Khaliq Bus',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: const WelcomePage(),
+      //Check if user is logged in 
+      home: FirebaseAuth.instance.currentUser != null ? const HomePage() : const WelcomePage(),
       getPages: [
         GetPage(name: '/welcome', page: () => const WelcomePage()),
         GetPage(name: '/home', page: () => const HomePage()),

@@ -1,6 +1,6 @@
 // ignore_for_file: file_names
-
 import 'package:flutter/material.dart';
+import 'package:khaliq_bus/components/BlueDrawer.dart';
 import 'package:khaliq_bus/components/NavigationBar.dart';
 import 'package:khaliq_bus/style.dart';
 
@@ -12,6 +12,8 @@ class HomePage extends StatefulWidget {
 } 
 
 class _HomePageState extends State<HomePage> {
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -34,32 +36,9 @@ class _HomePageState extends State<HomePage> {
           elevation: 0,
           backgroundColor: Colors.transparent,
         ),
-        drawer: Drawer(
-           child: ListView(
-            padding: EdgeInsets.zero,
-            children: [
-              const DrawerHeader(
-                decoration: BoxDecoration(
-                  color: Colors.blue,
-                ),
-                child: Text('Drawer Header'),
-              ),
-              ListTile(
-                title: const Text('Item 1'),
-                onTap: () {
-                },
-              ),
-              ListTile(
-                title: const Text('Item 2'),
-                onTap: () {
-                },
-              ),
-            ],
-          ),
-        ),
+        drawer: BlueDrawer(),
         bottomNavigationBar: const AppNavigationBar(),
         body: const Text('Home'),
-
       ),
     );
   }
