@@ -2,7 +2,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:khaliq_bus/components/BlueDrawer.dart';
+import 'package:khaliq_bus/components/ImageCard.dart';
 import 'package:khaliq_bus/components/NavigationBar.dart';
+import 'package:khaliq_bus/screens/FavouritesPage.dart';
+import 'package:khaliq_bus/screens/NearbyPage.dart';
+import 'package:khaliq_bus/screens/SearchPage.dart';
 import 'package:khaliq_bus/style.dart';
 
 class HomePage extends StatefulWidget {
@@ -67,8 +71,38 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
 
+            //Divider
+            const SizedBox(height: 15),
+
             //4 buttons
-        
+            Padding(
+              padding: const EdgeInsets.fromLTRB(10, 0,10,0),
+              child: Column(
+                children: [
+                  //2 buttons
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      ImageCard(img: 'assets/images/bus766.jpg', title: 'Search for bus stops', page: const SearchPage(), index: 1,),
+                      const SizedBox(width: 15,),
+                      ImageCard(img: 'assets/images/bus359.jpg', title: 'Favourite bus stops', page: const FavouritesPage(), index: 2,),
+                    ],
+                  ),
+
+                  //Divider
+                  const SizedBox(height: 20,),
+            
+                  //2 buttons
+                  Row(
+                    children: [
+                      ImageCard(img: 'assets/images/bus26.jpg', title: 'Nearby bus stops', page: const NearbyPage(), index: 3,),
+                      const SizedBox(width: 15,),
+                      ImageCard(img: 'assets/images/galaxy.jpg', title: 'Toggle mode'),
+                    ],
+                  ),
+                ],
+              ),
+            )
           ],
         ),
       ),

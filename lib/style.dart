@@ -7,7 +7,7 @@ const BodyTextSize = 17.0;
 const ButtonTextSize = 16.0;
 
 const white = Color.fromRGBO(255, 255, 255, 1);
-const lightblue = Color.fromRGBO(241, 249, 255, 1);
+const lightblue = Color.fromRGBO(198, 224, 242, 1);
 const midblue = Color.fromRGBO(188, 224, 253, 1);
 const blue = Color.fromRGBO(127, 196, 253, 1);
 const darkblue = Color.fromRGBO(38, 153, 251, 1);
