@@ -40,11 +40,11 @@ class BlueDrawer extends StatelessWidget {
                   Text('${user != null?  user!.email : null}', style: DrawerHeaderTextStyle,),
                 ],
               )
-                     ),
+            ),
            ),
           ListTile(
             leading: const Icon(Icons.home, color: white,),
-            title: const Text('HOME', style: ButtonTextStyle,),
+            title: const Text('Home', style: ButtonTextStyle,),
             onTap: () {
               navController.selectedIndex.value = 0;
               Get.to(() => const HomePage(), transition: Transition.noTransition);
@@ -52,7 +52,7 @@ class BlueDrawer extends StatelessWidget {
           ),
           ListTile(
             leading: const Icon(Icons.search, color: white,),
-            title: const Text('SEARCH', style: ButtonTextStyle,),
+            title: const Text('Search', style: ButtonTextStyle,),
             onTap: () {
               navController.selectedIndex.value = 1;
               Get.to(() => const SearchPage(), transition: Transition.noTransition);
@@ -60,7 +60,7 @@ class BlueDrawer extends StatelessWidget {
           ),
           ListTile(
             leading: const Icon(Icons.favorite, color: white,),
-            title: const Text('FAVOURITES', style: ButtonTextStyle,),
+            title: const Text('Favourites', style: ButtonTextStyle,),
             onTap: () {
               navController.selectedIndex.value = 2;
               Get.to(() => const FavouritesPage(), transition: Transition.noTransition);
@@ -68,7 +68,7 @@ class BlueDrawer extends StatelessWidget {
           ),
           ListTile(
             leading: const Icon(Icons.directions_bus, color: white,),
-            title: const Text('NEARBY BUS STOPS', style: ButtonTextStyle,),
+            title: const Text('Nearby Bus Stops', style: ButtonTextStyle,),
             onTap: () {
               navController.selectedIndex.value = 3;
               Get.to(() => const NearbyPage(), transition: Transition.noTransition);
@@ -76,7 +76,7 @@ class BlueDrawer extends StatelessWidget {
           ),
           ListTile(
             leading: const Icon(Icons.person, color: white,),
-            title: const Text('PROFILE', style: ButtonTextStyle,),
+            title: const Text('Profile', style: ButtonTextStyle,),
             onTap: () {
               navController.selectedIndex.value = 4;
               Get.to(() => const ProfilePage(), transition: Transition.noTransition);
@@ -84,7 +84,7 @@ class BlueDrawer extends StatelessWidget {
           ),
           ListTile(
             leading: const Icon(Icons.phone, color: white,),
-            title: const Text('ABOUT US', style: ButtonTextStyle,),
+            title: const Text('About Us', style: ButtonTextStyle,),
             onTap: () {
               navController.selectedIndex.value = 5;
               Get.to(() => const AboutusPage(), transition: Transition.noTransition);
@@ -92,7 +92,7 @@ class BlueDrawer extends StatelessWidget {
           ),
           ListTile(
             leading: const Icon(Icons.logout, color: white,),
-            title: const Text('LOGOUT', style: ButtonTextStyle,),
+            title: const Text('Logout', style: ButtonTextStyle,),
             onTap: () {
               FirebaseAuthService().signOut();
               Get.offAll(() => const LoginPage(), transition: Transition.noTransition);

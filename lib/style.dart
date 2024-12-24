@@ -33,12 +33,19 @@ const BodyTextStyle = TextStyle(
   fontFamily: BodyFont,
   fontWeight: FontWeight.w400,
   fontSize: BodyTextSize,
-  color: blue,
+  color: darkblue,
 );
 
 const LinkTextStyle = TextStyle(
   fontFamily: BodyFont,
   fontWeight: FontWeight.w400,
+  fontSize: BodyTextSize,
+  color: darkblue,
+);
+
+const TitleTextStyle = TextStyle(
+  fontFamily: BodyFont,
+  fontWeight: FontWeight.bold,
   fontSize: BodyTextSize,
   color: darkblue,
 );
