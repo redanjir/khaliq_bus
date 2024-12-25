@@ -29,7 +29,7 @@ class AppNavigationBar extends StatelessWidget {
           elevation: 0,
           onDestinationSelected: (index){
             navController.selectedIndex.value = index;
-            Get.offAll(navController.screens[navController.selectedIndex.value], transition: Transition.noTransition);
+            Get.offAll(() => navController.screens[navController.selectedIndex.value], transition: Transition.noTransition);
           },
           destinations:  [
             NavigationDestination(

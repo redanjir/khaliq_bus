@@ -55,7 +55,7 @@ class _SearchPageState extends State<SearchPage> {
           elevation: 0,
           backgroundColor: Colors.transparent,
         ),
-        drawer: BlueDrawer(),
+        drawer: const BlueDrawer(),
         bottomNavigationBar: const AppNavigationBar(),
         body: const Text('Search'),
       ),

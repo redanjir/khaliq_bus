@@ -17,7 +17,14 @@ class HomePage extends StatefulWidget {
 } 
 
 class _HomePageState extends State<HomePage> {
-  final User? user = FirebaseAuth.instance.currentUser;
+  String? userEmail;
+
+  @override
+  void initState() {
+    super.initState();
+    userEmail = FirebaseAuth.instance.currentUser!.email;
+  }
+  // final User? user = FirebaseAuth.instance.currentUser;
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +47,7 @@ class _HomePageState extends State<HomePage> {
           elevation: 0,
           backgroundColor: Colors.transparent,
         ),
-        drawer: BlueDrawer(),
+        drawer: const BlueDrawer(),
         bottomNavigationBar: const AppNavigationBar(),
         body: Column(
           children: [
@@ -48,7 +55,7 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(height: 20),
 
             //Welcome
-            Text('Hello ${user!.email}, welcome back!', style: TitleTextStyle,),
+            Text('Hello $userEmail, welcome back!', style: TitleTextStyle,),
 
             //Divider
             const SizedBox(height: 20),
@@ -75,34 +82,34 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(height: 15),
 
             //4 buttons
-            Padding(
-              padding: const EdgeInsets.fromLTRB(10, 0,10,0),
-              child: Column(
-                children: [
-                  //2 buttons
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      ImageCard(img: 'assets/images/bus766.jpg', title: 'Search for bus stops', page: const SearchPage(), index: 1,),
-                      const SizedBox(width: 15,),
-                      ImageCard(img: 'assets/images/bus359.jpg', title: 'Favourite bus stops', page: const FavouritesPage(), index: 2,),
-                    ],
-                  ),
+            // Padding(
+            //   padding: const EdgeInsets.fromLTRB(10, 0,10,0),
+            //   child: Column(
+            //     children: [
+            //       //2 buttons
+            //       Row(
+            //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //         children: [
+            //           ImageCard(img: 'assets/images/bus766.jpg', title: 'Search for bus stops', page: const SearchPage(), index: 1,),
+            //           const SizedBox(width: 15,),
+            //           ImageCard(img: 'assets/images/bus359.jpg', title: 'Favourite bus stops', page: const FavouritesPage(), index: 2,),
+            //         ],
+            //       ),
 
-                  //Divider
-                  const SizedBox(height: 20,),
+            //       //Divider
+            //       const SizedBox(height: 20,),
             
-                  //2 buttons
-                  Row(
-                    children: [
-                      ImageCard(img: 'assets/images/bus26.jpg', title: 'Nearby bus stops', page: const NearbyPage(), index: 3,),
-                      const SizedBox(width: 15,),
-                      ImageCard(img: 'assets/images/galaxy.jpg', title: 'Toggle mode'),
-                    ],
-                  ),
-                ],
-              ),
-            )
+            //       //2 buttons
+            //       Row(
+            //         children: [
+            //           ImageCard(img: 'assets/images/bus26.jpg', title: 'Nearby bus stops', page: const NearbyPage(), index: 3,),
+            //           const SizedBox(width: 15,),
+            //           ImageCard(img: 'assets/images/galaxy.jpg', title: 'Toggle mode'),
+            //         ],
+            //       ),
+            //     ],
+            //   ),
+            // )
           ],
         ),
       ),

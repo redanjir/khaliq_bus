@@ -40,8 +40,6 @@ class ImageCard extends StatelessWidget {
             if(page !=null && index !=null){
               navController.selectedIndex.value = index!;
               Get.to(page, transition: Transition.noTransition);
-            }else{
-              DoNothingAction();
             }
           },
           child: SizedBox(

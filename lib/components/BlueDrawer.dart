@@ -7,18 +7,30 @@ import 'package:khaliq_bus/controllers/NavigationController.dart';
 import 'package:khaliq_bus/screens/AboutusPage.dart';
 import 'package:khaliq_bus/screens/FavouritesPage.dart';
 import 'package:khaliq_bus/screens/HomePage.dart';
-import 'package:khaliq_bus/screens/LoginPage.dart';
 import 'package:khaliq_bus/screens/NearbyPage.dart';
 import 'package:khaliq_bus/screens/ProfilePage.dart';
 import 'package:khaliq_bus/screens/SearchPage.dart';
+import 'package:khaliq_bus/screens/WelcomePage.dart';
 import 'package:khaliq_bus/services/firebaseauth_service.dart';
 import 'package:khaliq_bus/style.dart';
 
-class BlueDrawer extends StatelessWidget {
-  BlueDrawer({super.key});
+class BlueDrawer extends StatefulWidget {
+  const BlueDrawer({super.key});
+
+  @override
+  State<BlueDrawer> createState() => _BlueDrawerState();
+}
+
+class _BlueDrawerState extends State<BlueDrawer> {
   final navController = Get.find<NavigationController>(); 
+  String? userEmail;
+
   //Get the current user
-  final User? user = FirebaseAuth.instance.currentUser;
+  @override
+  void initState() {
+    super.initState();
+    userEmail = FirebaseAuth.instance.currentUser!.email;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +49,7 @@ class BlueDrawer extends StatelessWidget {
                 children: [
                   const Icon(Icons.account_circle, size: 60, color: darkblue,),
                   const SizedBox(width: 20,),
-                  Text('${user != null?  user!.email : null}', style: DrawerHeaderTextStyle,),
+                  Text('${userEmail ?? userEmail}', style: DrawerHeaderTextStyle,),
                 ],
               )
             ),
@@ -94,8 +106,9 @@ class BlueDrawer extends StatelessWidget {
             leading: const Icon(Icons.logout, color: white,),
             title: const Text('Logout', style: ButtonTextStyle,),
             onTap: () {
+              navController.selectedIndex.value = 0;
               FirebaseAuthService().signOut();
-              Get.offAll(() => const LoginPage(), transition: Transition.noTransition);
+              Get.offAll(() => const WelcomePage(), transition: Transition.noTransition);
             },
           ),
         ],
