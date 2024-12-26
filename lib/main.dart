@@ -4,6 +4,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:khaliq_bus/controllers/NavigationController.dart';
 import 'package:khaliq_bus/firebase_options.dart';
 import 'package:get/get.dart';
+import 'package:khaliq_bus/screens/NearbyPage.dart';
 import 'screens/AboutusPage.dart';
 import 'screens/FavouritesPage.dart';
 import 'screens/ProfilePage.dart';
@@ -37,13 +38,14 @@ class MyApp extends StatelessWidget {
       //Check if user is logged in 
       home: FirebaseAuth.instance.currentUser != null ? const HomePage() : const WelcomePage(),
       getPages: [
-        GetPage(name: '/welcome', page: () => const WelcomePage()),
-        GetPage(name: '/home', page: () => const HomePage()),
+        GetPage(name: '/welcome', page: () => const WelcomePage(), transition: Transition.noTransition),
+        GetPage(name: '/home', page: () => const HomePage(), transition: Transition.noTransition),
         GetPage(name: '/login', page: () => const LoginPage(), transition: Transition.rightToLeft),
         GetPage(name: '/profile', page: () => const ProfilePage()),
         GetPage(name: '/favourites', page: () => const FavouritesPage()),
-        GetPage(name: '/search', page: () => const SearchPage()),
-        GetPage(name: '/about', page: () => const AboutusPage()),
+        GetPage(name: '/search', page: () => const SearchPage(), transition: Transition.noTransition),
+        GetPage(name: '/about', page: () => const AboutusPage(), transition: Transition.noTransition),
+        GetPage(name: '/nearby', page: () => const NearbyPage(), transition: Transition.noTransition),
       ],
     );
   }

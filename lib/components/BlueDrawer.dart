@@ -4,13 +4,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:khaliq_bus/controllers/NavigationController.dart';
-import 'package:khaliq_bus/screens/AboutusPage.dart';
-import 'package:khaliq_bus/screens/FavouritesPage.dart';
-import 'package:khaliq_bus/screens/HomePage.dart';
-import 'package:khaliq_bus/screens/NearbyPage.dart';
-import 'package:khaliq_bus/screens/ProfilePage.dart';
-import 'package:khaliq_bus/screens/SearchPage.dart';
-import 'package:khaliq_bus/screens/WelcomePage.dart';
 import 'package:khaliq_bus/services/firebaseauth_service.dart';
 import 'package:khaliq_bus/style.dart';
 
@@ -49,7 +42,7 @@ class _BlueDrawerState extends State<BlueDrawer> {
                 children: [
                   const Icon(Icons.account_circle, size: 60, color: darkblue,),
                   const SizedBox(width: 20,),
-                  Text('${userEmail ?? userEmail}', style: DrawerHeaderTextStyle,),
+                  Text(userEmail ?? "Guest", style: DrawerHeaderTextStyle,),
                 ],
               )
             ),
@@ -59,7 +52,7 @@ class _BlueDrawerState extends State<BlueDrawer> {
             title: const Text('Home', style: ButtonTextStyle,),
             onTap: () {
               navController.selectedIndex.value = 0;
-              Get.to(() => const HomePage(), transition: Transition.noTransition);
+              Get.toNamed("/home");
             },
           ),
           ListTile(
@@ -67,7 +60,7 @@ class _BlueDrawerState extends State<BlueDrawer> {
             title: const Text('Search', style: ButtonTextStyle,),
             onTap: () {
               navController.selectedIndex.value = 1;
-              Get.to(() => const SearchPage(), transition: Transition.noTransition);
+              Get.toNamed("/search");
             },
           ),
           ListTile(
@@ -75,7 +68,7 @@ class _BlueDrawerState extends State<BlueDrawer> {
             title: const Text('Favourites', style: ButtonTextStyle,),
             onTap: () {
               navController.selectedIndex.value = 2;
-              Get.to(() => const FavouritesPage(), transition: Transition.noTransition);
+              Get.toNamed("/favourites");
             },
           ),
           ListTile(
@@ -83,7 +76,7 @@ class _BlueDrawerState extends State<BlueDrawer> {
             title: const Text('Nearby Bus Stops', style: ButtonTextStyle,),
             onTap: () {
               navController.selectedIndex.value = 3;
-              Get.to(() => const NearbyPage(), transition: Transition.noTransition);
+              Get.toNamed("/nearby");
             },
           ),
           ListTile(
@@ -91,7 +84,7 @@ class _BlueDrawerState extends State<BlueDrawer> {
             title: const Text('Profile', style: ButtonTextStyle,),
             onTap: () {
               navController.selectedIndex.value = 4;
-              Get.to(() => const ProfilePage(), transition: Transition.noTransition);
+              Get.toNamed("/profile");
             },
           ),
           ListTile(
@@ -99,7 +92,7 @@ class _BlueDrawerState extends State<BlueDrawer> {
             title: const Text('About Us', style: ButtonTextStyle,),
             onTap: () {
               navController.selectedIndex.value = 5;
-              Get.to(() => const AboutusPage(), transition: Transition.noTransition);
+              Get.toNamed("/about");
             },
           ),
           ListTile(
@@ -108,7 +101,7 @@ class _BlueDrawerState extends State<BlueDrawer> {
             onTap: () {
               navController.selectedIndex.value = 0;
               FirebaseAuthService().signOut();
-              Get.offAll(() => const WelcomePage(), transition: Transition.noTransition);
+              Get.offAllNamed("/welcome");
             },
           ),
         ],
