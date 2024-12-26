@@ -27,14 +27,14 @@ class FirebaseAuthService{
     }
 
     //Sign up user
-    Future<User?> signUp({String? email, String? password})async{
+    Future<User?> signUp({String? email, String? password, String? displayname})async{
       try{
             UserCredential ucred = await _fbAuth.createUserWithEmailAndPassword(email: email!, password: password!);
 
             User? user = ucred.user;
-
+            await user!.updateDisplayName(displayname);
             debugPrint("Sign up successfull! user: $user");
-            return user!;
+            return user;
         }
         on FirebaseAuthException catch(e){
             Fluttertoast.showToast(msg: e.message!, gravity: ToastGravity.TOP);

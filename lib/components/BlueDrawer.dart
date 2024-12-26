@@ -16,13 +16,13 @@ class BlueDrawer extends StatefulWidget {
 
 class _BlueDrawerState extends State<BlueDrawer> {
   final navController = Get.find<NavigationController>(); 
-  String? userEmail;
+  String? displayName;
 
   //Get the current user
   @override
   void initState() {
     super.initState();
-    userEmail = FirebaseAuth.instance.currentUser!.email;
+    displayName = FirebaseAuth.instance.currentUser!.displayName;
   }
 
   @override
@@ -42,7 +42,7 @@ class _BlueDrawerState extends State<BlueDrawer> {
                 children: [
                   const Icon(Icons.account_circle, size: 60, color: darkblue,),
                   const SizedBox(width: 20,),
-                  Text(userEmail ?? "Guest", style: DrawerHeaderTextStyle,),
+                  Text(displayName ?? "Guest", style: DrawerHeaderTextStyle,),
                 ],
               )
             ),
@@ -93,6 +93,13 @@ class _BlueDrawerState extends State<BlueDrawer> {
             onTap: () {
               navController.selectedIndex.value = 5;
               Get.toNamed("/about");
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.dark_mode, color: white,),
+            title: const Text('Dark mode', style: ButtonTextStyle,),
+            onTap: () {
+             //TODO: Add light and dark mode
             },
           ),
           ListTile(

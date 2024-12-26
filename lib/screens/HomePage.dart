@@ -1,12 +1,12 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 // ignore_for_file: file_names
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+
 import 'package:khaliq_bus/components/BlueDrawer.dart';
-import 'package:khaliq_bus/components/ImageCard.dart';
+import 'package:khaliq_bus/components/GridCard.dart';
+import 'package:khaliq_bus/components/MyBanner.dart';
 import 'package:khaliq_bus/components/NavigationBar.dart';
-import 'package:khaliq_bus/screens/FavouritesPage.dart';
-import 'package:khaliq_bus/screens/NearbyPage.dart';
-import 'package:khaliq_bus/screens/SearchPage.dart';
 import 'package:khaliq_bus/style.dart';
 
 class HomePage extends StatefulWidget {
@@ -17,15 +17,40 @@ class HomePage extends StatefulWidget {
 } 
 
 class _HomePageState extends State<HomePage> {
-  String? userEmail;
+  String? displayName;
+
+  final List<String> _images = [
+    // 'assets/images/bus766.jpg',
+    // 'assets/images/bus359.jpg',
+    // 'assets/images/bus26.jpg',
+    // 'assets/images/galaxy.jpg',
+
+    'assets/images/bus26.jpg',
+    'assets/images/bus26.jpg',
+    'assets/images/bus26.jpg',
+    'assets/images/bus26.jpg'
+  ];
+
+  final List<String> _routes = [
+    '/search',
+    '/favourites',
+    '/nearby',
+    '/profile'
+  ];
+
+  final List<String> _titles = [
+    'Search for bus stops',
+    'Favourite bus stops',
+    'Nearby bus stops',
+    'Profile',
+  ];
 
   @override
   void initState() {
     super.initState();
-    userEmail = FirebaseAuth.instance.currentUser!.email;
+    displayName = FirebaseAuth.instance.currentUser!.displayName;
   }
-  // final User? user = FirebaseAuth.instance.currentUser;
-
+  
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -55,61 +80,35 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(height: 20),
 
             //Welcome
-            Text('Hello $userEmail, welcome back!', style: TitleTextStyle,),
+            Text('Hello ${displayName ?? 'Guest'}, welcome back!', style: TitleTextStyle,),
 
             //Divider
             const SizedBox(height: 20),
 
             //Banner
-            Padding(
-              padding: const EdgeInsets.fromLTRB(10, 0,10,0),
-              child: SizedBox(
-                height: 180,
-                width: double.infinity,
-                child: Card(
-                  clipBehavior: Clip.antiAliasWithSaveLayer,
-                  semanticContainer: true,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  elevation: 5,
-                  child: const Image(image: AssetImage('assets/images/busrain.jpg'), fit: BoxFit.cover,)
-                ),
-              ),
-            ),
+            const MyBanner(),
 
             //Divider
-            const SizedBox(height: 15),
+            const SizedBox(height: 10),
 
             //4 buttons
-            // Padding(
-            //   padding: const EdgeInsets.fromLTRB(10, 0,10,0),
-            //   child: Column(
-            //     children: [
-            //       //2 buttons
-            //       Row(
-            //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //         children: [
-            //           ImageCard(img: 'assets/images/bus766.jpg', title: 'Search for bus stops', page: const SearchPage(), index: 1,),
-            //           const SizedBox(width: 15,),
-            //           ImageCard(img: 'assets/images/bus359.jpg', title: 'Favourite bus stops', page: const FavouritesPage(), index: 2,),
-            //         ],
-            //       ),
-
-            //       //Divider
-            //       const SizedBox(height: 20,),
-            
-            //       //2 buttons
-            //       Row(
-            //         children: [
-            //           ImageCard(img: 'assets/images/bus26.jpg', title: 'Nearby bus stops', page: const NearbyPage(), index: 3,),
-            //           const SizedBox(width: 15,),
-            //           ImageCard(img: 'assets/images/galaxy.jpg', title: 'Toggle mode'),
-            //         ],
-            //       ),
-            //     ],
-            //   ),
-            // )
+            Expanded(
+              child: Container(
+                padding: const EdgeInsets.fromLTRB(15, 0, 15, 0),
+                 child: GridView.builder(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 10,
+                    mainAxisSpacing: 10,
+                    mainAxisExtent: 170, // here set custom Height You Want for each child
+                  ),
+                  itemCount: 4,
+                  itemBuilder: (BuildContext context, int index) {
+                    return GridCard(imagepath: _images[index], title: _titles[index], route: _routes[index], index: index,);
+                  },
+                ),
+              ),
+            )
           ],
         ),
       ),
