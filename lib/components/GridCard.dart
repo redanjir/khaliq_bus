@@ -34,18 +34,38 @@ class GridCard extends StatelessWidget {
             //Image here
             Padding(
               padding: const EdgeInsets.fromLTRB(10.0, 10, 10, 7),
-              child: Container(
-                height: 120,
-                width: double.maxFinite,
-                // child: const Icon(Icons.favorite, size: 80, color: Colors.red,),
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(imagepath),
-                    fit: BoxFit.cover,
+              child: Stack(
+                children: [
+                  
+                  //Image
+                  Container(
+                    height: 120,
+                    width: double.maxFinite,
+                    // child: const Icon(Icons.favorite, size: 80, color: Colors.red,),
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage(imagepath),
+                        fit: BoxFit.cover,
+                      ),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
                   ),
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                
+
+                  //Colour gradient
+                  Container(
+                    height: 120.0,
+                    decoration: BoxDecoration(
+                    color: Colors.white,
+                    gradient: LinearGradient(
+                        begin: FractionalOffset.topCenter,
+                        end: FractionalOffset.bottomCenter,
+                        colors: [
+                          Colors.grey.withOpacity(0.0),
+                          blue.withOpacity(0.5)
+                        ],
+                    )),
+                  ),
+                ],
               ),
             ),
             //Title here

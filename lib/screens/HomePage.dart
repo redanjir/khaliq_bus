@@ -25,10 +25,15 @@ class _HomePageState extends State<HomePage> {
     // 'assets/images/bus26.jpg',
     // 'assets/images/galaxy.jpg',
 
-    'assets/images/bus26.jpg',
-    'assets/images/bus26.jpg',
-    'assets/images/bus26.jpg',
-    'assets/images/bus26.jpg'
+    // 'assets/images/bus26.jpg',
+    // 'assets/images/bus26.jpg',
+    // 'assets/images/bus26.jpg',
+    // 'assets/images/bus26.jpg',
+
+    'assets/images/compressed/bus766-min.jpg',
+    'assets/images/compressed/bus359-min.jpg',
+    'assets/images/compressed/bus26-min.jpg',
+    'assets/images/compressed/oldman_bus-min.jpeg',
   ];
 
   final List<String> _routes = [
@@ -94,7 +99,7 @@ class _HomePageState extends State<HomePage> {
             //4 buttons
             Expanded(
               child: Container(
-                padding: const EdgeInsets.fromLTRB(15, 0, 15, 0),
+                padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
                  child: GridView.builder(
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,

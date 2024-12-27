@@ -55,30 +55,30 @@ class _BlueDrawerState extends State<BlueDrawer> {
               Get.toNamed("/home");
             },
           ),
-          ListTile(
-            leading: const Icon(Icons.search, color: white,),
-            title: const Text('Search', style: ButtonTextStyle,),
-            onTap: () {
-              navController.selectedIndex.value = 1;
-              Get.toNamed("/search");
-            },
-          ),
-          ListTile(
-            leading: const Icon(Icons.favorite, color: white,),
-            title: const Text('Favourites', style: ButtonTextStyle,),
-            onTap: () {
-              navController.selectedIndex.value = 2;
-              Get.toNamed("/favourites");
-            },
-          ),
-          ListTile(
-            leading: const Icon(Icons.directions_bus, color: white,),
-            title: const Text('Nearby Bus Stops', style: ButtonTextStyle,),
-            onTap: () {
-              navController.selectedIndex.value = 3;
-              Get.toNamed("/nearby");
-            },
-          ),
+          // ListTile(
+          //   leading: const Icon(Icons.search, color: white,),
+          //   title: const Text('Search', style: ButtonTextStyle,),
+          //   onTap: () {
+          //     navController.selectedIndex.value = 1;
+          //     Get.toNamed("/search");
+          //   },
+          // ),
+          // ListTile(
+          //   leading: const Icon(Icons.favorite, color: white,),
+          //   title: const Text('Favourites', style: ButtonTextStyle,),
+          //   onTap: () {
+          //     navController.selectedIndex.value = 2;
+          //     Get.toNamed("/favourites");
+          //   },
+          // ),
+          // ListTile(
+          //   leading: const Icon(Icons.directions_bus, color: white,),
+          //   title: const Text('Nearby Bus Stops', style: ButtonTextStyle,),
+          //   onTap: () {
+          //     navController.selectedIndex.value = 3;
+          //     Get.toNamed("/nearby");
+          //   },
+          // ),
           ListTile(
             leading: const Icon(Icons.person, color: white,),
             title: const Text('Profile', style: ButtonTextStyle,),
@@ -87,14 +87,14 @@ class _BlueDrawerState extends State<BlueDrawer> {
               Get.toNamed("/profile");
             },
           ),
-          ListTile(
-            leading: const Icon(Icons.phone, color: white,),
-            title: const Text('About Us', style: ButtonTextStyle,),
-            onTap: () {
-              navController.selectedIndex.value = 5;
-              Get.toNamed("/about");
-            },
-          ),
+          // ListTile(
+          //   leading: const Icon(Icons.phone, color: white,),
+          //   title: const Text('About Us', style: ButtonTextStyle,),
+          //   onTap: () {
+          //     navController.selectedIndex.value = 5;
+          //     Get.toNamed("/about");
+          //   },
+          // ),
           ListTile(
             leading: const Icon(Icons.dark_mode, color: white,),
             title: const Text('Dark mode', style: ButtonTextStyle,),
