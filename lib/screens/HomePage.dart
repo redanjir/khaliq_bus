@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import 'package:khaliq_bus/components/BlueDrawer.dart';
+import 'package:khaliq_bus/components/CustomAppBar.dart';
 import 'package:khaliq_bus/components/GridCard.dart';
 import 'package:khaliq_bus/components/MyBanner.dart';
 import 'package:khaliq_bus/components/NavigationBar.dart';
@@ -60,35 +61,19 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          title: const Text('Home', style: AppBarTextStyle,),
-          automaticallyImplyLeading: false,
-          leading: Builder(
-            builder: (context) {
-              return IconButton(
-                icon: const Icon(Icons.menu, color: darkblue,),
-                onPressed: () {
-                  Scaffold.of(context).openDrawer();
-                },
-              );
-            },
-          ),
-          elevation: 0,
-          backgroundColor: Colors.transparent,
-        ),
+        appBar: const CustomAppBar(title: 'Home',),
         drawer: const BlueDrawer(),
         bottomNavigationBar: const AppNavigationBar(),
         body: Column(
           children: [
             //Divider
-            const SizedBox(height: 20),
+            const SizedBox(height: 15),
 
             //Welcome
             Text('Hello ${displayName ?? 'Guest'}, welcome back!', style: TitleTextStyle,),
 
             //Divider
-            const SizedBox(height: 20),
+            const SizedBox(height: 12),
 
             //Banner
             const MyBanner(),
@@ -103,8 +88,8 @@ class _HomePageState extends State<HomePage> {
                  child: GridView.builder(
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                    crossAxisSpacing: 10,
-                    mainAxisSpacing: 10,
+                    crossAxisSpacing: 17,
+                    mainAxisSpacing: 25,
                     mainAxisExtent: 170, // here set custom Height You Want for each child
                   ),
                   itemCount: 4,

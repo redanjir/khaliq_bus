@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:khaliq_bus/components/BlueDrawer.dart';
+import 'package:khaliq_bus/components/CustomAppBar.dart';
 import 'package:khaliq_bus/components/NavigationBar.dart';
 import 'package:khaliq_bus/style.dart';
 
@@ -12,24 +13,8 @@ class AboutusPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          title: const Text('About Us', style: AppBarTextStyle,),
-          automaticallyImplyLeading: false,
-          leading: Builder(
-            builder: (context) {
-              return IconButton(
-                icon: const Icon(Icons.menu, color: darkblue,),
-                onPressed: () {
-                  Scaffold.of(context).openDrawer();
-                },
-              );
-            },
-          ),
-          elevation: 0,
-          backgroundColor: Colors.transparent,
-        ),
-        drawer: BlueDrawer(),
+        appBar: const CustomAppBar(title: 'About Us'),
+        drawer: const BlueDrawer(),
         bottomNavigationBar: const AppNavigationBar(),
         body: const Text('About Us'),
       ),

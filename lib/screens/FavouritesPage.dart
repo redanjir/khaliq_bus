@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:khaliq_bus/components/BlueDrawer.dart';
+import 'package:khaliq_bus/components/CustomAppBar.dart';
 import 'package:khaliq_bus/components/NavigationBar.dart';
 import 'package:khaliq_bus/style.dart';
 
@@ -12,23 +13,7 @@ class FavouritesPage extends StatelessWidget {
   Widget build(BuildContext context) {
  return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          title: const Text('Favourites', style: AppBarTextStyle,),
-          automaticallyImplyLeading: false,
-          leading: Builder(
-            builder: (context) {
-              return IconButton(
-                icon: const Icon(Icons.menu, color: darkblue,),
-                onPressed: () {
-                  Scaffold.of(context).openDrawer();
-                },
-              );
-            },
-          ),
-          elevation: 0,
-          backgroundColor: Colors.transparent,
-        ),
+        appBar: CustomAppBar(title: 'Favourites'),
         drawer: BlueDrawer(),
         bottomNavigationBar: const AppNavigationBar(),
         body: const Text('Favourites'),

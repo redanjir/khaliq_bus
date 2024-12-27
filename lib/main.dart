@@ -34,7 +34,6 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Khaliq Bus',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.blue),
       //Check if user is logged in 
       home: FirebaseAuth.instance.currentUser != null ? const HomePage() : const WelcomePage(),
       getPages: [

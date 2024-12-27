@@ -16,7 +16,7 @@ class AppNavigationBar extends StatelessWidget {
     return Obx(
       ()=> Container(
         decoration: const BoxDecoration(
-          border: Border(top: BorderSide(color: blue))
+          border: Border(top: BorderSide(color: gray))
         ),
         child: NavigationBar(
           //Hiding the label for better UX
@@ -25,7 +25,7 @@ class AppNavigationBar extends StatelessWidget {
           animationDuration: const Duration(milliseconds: 1000),
           backgroundColor: Colors.transparent,
           selectedIndex: navController.selectedIndex.value,
-          height: 70,
+          height: 55,
           elevation: 0,
           onDestinationSelected: (index){
             navController.selectedIndex.value = index;

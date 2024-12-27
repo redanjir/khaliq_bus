@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:khaliq_bus/components/BlueDrawer.dart';
+import 'package:khaliq_bus/components/CustomAppBar.dart';
 import 'package:khaliq_bus/components/NavigationBar.dart';
 import 'package:khaliq_bus/style.dart';
 
@@ -10,29 +11,13 @@ class NearbyPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          title: const Text('Nearby Bus Stops', style: AppBarTextStyle,),
-          automaticallyImplyLeading: false,
-          leading: Builder(
-            builder: (context) {
-              return IconButton(
-                icon: const Icon(Icons.menu, color: darkblue,),
-                onPressed: () {
-                  Scaffold.of(context).openDrawer();
-                },
-              );
-            },
-          ),
-          elevation: 0,
-          backgroundColor: Colors.transparent,
+  return SafeArea(
+        child: Scaffold(
+          appBar: CustomAppBar(title: 'Nearby Bus Stops'),
+          drawer: BlueDrawer(),
+          bottomNavigationBar: const AppNavigationBar(),
+          body: const Text('Home'),
         ),
-        drawer: BlueDrawer(),
-        bottomNavigationBar: const AppNavigationBar(),
-        body: const Text('Home'),
-      ),
-    );
-  }
+      );
+    }
 }
