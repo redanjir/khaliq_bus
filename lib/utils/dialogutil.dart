@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-void showDialogOK(BuildContext context, String title, String content){
+void showDialogOK({required BuildContext context, required String title, required String content, bool? home}){
   showDialog(
     context: context, 
     builder: (_) =>  AlertDialog(
@@ -13,6 +14,9 @@ void showDialogOK(BuildContext context, String title, String content){
         TextButton(
           onPressed: (){
             Navigator.of(context).pop();
+            if(home!){
+              Get.offAllNamed('/home');
+            }
           },
           child: const Text('Ok')
         )

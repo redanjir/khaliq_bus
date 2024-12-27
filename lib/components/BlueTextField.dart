@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:khaliq_bus/style.dart';
 
+final RegExp nameRegex = RegExp(r"^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$");
+
+final RegExp emailRegex = RegExp(r"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?)*$");
+
 class BlueTextField extends StatelessWidget {
   final String name;
   final TextEditingController controller;
@@ -18,7 +22,7 @@ class BlueTextField extends StatelessWidget {
           children: [
             Text(name, style: labelTextStyle,),
             const SizedBox(height: 5,),
-            TextField(
+            TextFormField(
               controller: controller,
               obscureText: obscuretext,
               decoration:  InputDecoration(
@@ -30,8 +34,36 @@ class BlueTextField extends StatelessWidget {
                 ),
                 enabledBorder: const OutlineInputBorder(
                   borderSide: BorderSide(width: 3, color: blue)
-                )
+                ),
+                errorBorder: const OutlineInputBorder(
+                  borderSide: BorderSide(width: 3, color: red)
+                ),
+                focusedErrorBorder: const OutlineInputBorder(
+                  borderSide: BorderSide(width: 3, color: red)
+                ),
               ),
+              validator: (value) {
+
+                if(name == 'Email'){
+                  if(!emailRegex.hasMatch(value!) && value.isNotEmpty){
+                    return 'Please enter valid email';
+                  }
+                }
+
+                if(name == 'Display Name'){
+                  if(!nameRegex.hasMatch(value!) && value.isNotEmpty){
+                    return 'Please enter valid name';
+                  }
+                }
+
+                if(name == 'Password'){
+                  if(value!.length < 6){
+                    return 'Password must be at least 6 characters';
+                  }
+                }
+                
+                return value!.isEmpty ? 'Field cannot be empty' : null;
+              },
             ),
           ],
         ),

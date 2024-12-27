@@ -12,6 +12,7 @@ const midblue = Color.fromRGBO(188, 224, 253, 1);
 const gray = Color.fromRGBO(218, 211, 211, 1);
 const blue = Color.fromRGBO(127, 196, 253, 1);
 const darkblue = Color.fromRGBO(38, 153, 251, 1);
+const red = Color.fromRGBO(247, 129, 129, 1);
 
 const String BodyFont = 'Arimo';
 const String LogoApp = 'Gelasio';
