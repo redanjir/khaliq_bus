@@ -1,19 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:khaliq_bus/controllers/ThemeController.dart';
 
+
+//Font sizes
 const LargeTextSize = 45.0;
 const MediumTextSize = 25.0;
 const SmallTextSize = 15.0;
 const BodyTextSize = 17.0;
 const ButtonTextSize = 16.0;
 
+//Light theme
 const white = Color.fromRGBO(255, 255, 255, 1);
 const lightblue = Color.fromRGBO(198, 224, 242, 1);
 const midblue = Color.fromRGBO(188, 224, 253, 1);
-const gray = Color.fromRGBO(218, 211, 211, 1);
 const blue = Color.fromRGBO(127, 196, 253, 1);
 const darkblue = Color.fromRGBO(38, 153, 251, 1);
-const red = Color.fromRGBO(247, 129, 129, 1);
 
+
+//Dark theme
+const black = Color.fromRGBO(0, 0, 0, 1);
+
+//Miscellaneous colors
+const red = Color.fromRGBO(247, 129, 129, 1);
+const gray = Color.fromRGBO(218, 211, 211, 1);
+
+//Fonts
 const String BodyFont = 'Arimo';
 const String LogoApp = 'Gelasio';
 
@@ -21,7 +33,7 @@ const AppBarTextStyle = TextStyle(
   fontFamily: BodyFont,
   fontWeight: FontWeight.w600,
   fontSize: MediumTextSize,
-  color: darkblue,
+  color:  darkblue,
 );
 
 const AppLogoTextStyle = TextStyle(

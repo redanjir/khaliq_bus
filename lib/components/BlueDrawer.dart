@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:khaliq_bus/controllers/NavigationController.dart';
+import 'package:khaliq_bus/controllers/ThemeController.dart';
 import 'package:khaliq_bus/services/firebaseauth_service.dart';
 import 'package:khaliq_bus/style.dart';
 
@@ -16,6 +17,8 @@ class BlueDrawer extends StatefulWidget {
 
 class _BlueDrawerState extends State<BlueDrawer> {
   final navController = Get.find<NavigationController>(); 
+  final themeController = Get.find<ThemeController>(); 
+
   String? displayName;
 
   //Get the current user
@@ -98,8 +101,9 @@ class _BlueDrawerState extends State<BlueDrawer> {
           ListTile(
             leading: const Icon(Icons.dark_mode, color: white,),
             title: const Text('Dark mode', style: ButtonTextStyle,),
-            onTap: () {
-             //TODO: Add light and dark mode
+            onTap: () async{
+             themeController.toggleTheme();
+             debugPrint('normal ${themeController.isDarkMode}');
             },
           ),
           ListTile(

@@ -1,15 +1,18 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:khaliq_bus/controllers/ThemeController.dart';
 import 'package:khaliq_bus/style.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget{
-  const CustomAppBar({
+  CustomAppBar({
     super.key,
     required this.title,
   });
 
   final String title;
+  final themeController = Get.find<ThemeController>(); 
 
   @override
   Size get preferredSize => const Size.fromHeight(55);
@@ -21,7 +24,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget{
         bottom: BorderSide(color: gray),
       ),
       centerTitle: true,
-      title:  Text(title, style: AppBarTextStyle,),
+      title:  Obx(()=> Text(title, style: TextStyle(color: themeController.isDarkMode ? black : darkblue),)),
       automaticallyImplyLeading: false,
       leading: Builder(
         builder: (context) {

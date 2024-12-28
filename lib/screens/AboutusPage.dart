@@ -13,7 +13,7 @@ class AboutusPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: const CustomAppBar(title: 'About Us'),
+        appBar:  CustomAppBar(title: 'About Us'),
         drawer: const BlueDrawer(),
         bottomNavigationBar: const AppNavigationBar(),
         body: const Text('About Us'),

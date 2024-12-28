@@ -1,10 +1,13 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:khaliq_bus/controllers/NavigationController.dart';
+import 'package:khaliq_bus/controllers/ThemeController.dart';
 import 'package:khaliq_bus/firebase_options.dart';
 import 'package:get/get.dart';
 import 'package:khaliq_bus/screens/NearbyPage.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'screens/AboutusPage.dart';
 import 'screens/FavouritesPage.dart';
 import 'screens/ProfilePage.dart';
@@ -14,8 +17,16 @@ import 'screens/LoginPage.dart';
 import 'screens/WelcomePage.dart';
 
 Future<void> main() async{
+
   //Controllers
   Get.put(NavigationController());
+  Get.put(ThemeController());
+
+
+  //Wait lah
+  final SharedPreferences prefs = await SharedPreferences.getInstance();
+  final isDark = prefs.getBool('isDark');
+  debugPrint('shared preferences is dark $isDark');
 
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(

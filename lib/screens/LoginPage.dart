@@ -1,10 +1,8 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:khaliq_bus/components/BlueButton.dart';
 import 'package:khaliq_bus/components/BlueTextField.dart';
-import 'package:khaliq_bus/screens/HomePage.dart';
 import 'package:khaliq_bus/services/firebaseauth_service.dart';
 import 'package:khaliq_bus/style.dart';
 import 'package:khaliq_bus/utils/dialogutil.dart';
@@ -39,7 +37,7 @@ class _LoginPageState extends State<LoginPage> {
         appBar: AppBar(
           automaticallyImplyLeading: false,
           title:  Center(
-            child: signUp ? const Text('Sign Up', style: AppBarTextStyle,) : const Text('Login', style: AppBarTextStyle,)
+            child: signUp ?  Text('Sign Up', style: AppBarTextStyle,) :  Text('Login', style: AppBarTextStyle,)
           ),
           elevation: 0,
           backgroundColor: Colors.transparent,
