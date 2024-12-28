@@ -103,7 +103,6 @@ class _BlueDrawerState extends State<BlueDrawer> {
             title: const Text('Dark mode', style: ButtonTextStyle,),
             onTap: () async{
              themeController.toggleTheme();
-             debugPrint('normal ${themeController.isDarkMode}');
             },
           ),
           ListTile(
