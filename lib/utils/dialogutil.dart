@@ -18,7 +18,7 @@ void showDialogOK({required BuildContext context, required String title, require
               Get.offAllNamed('/home');
             }
           },
-          child: const Text('Ok')
+          child: const Text('Ok', style: TextStyle(color: Colors.green) ,)
         )
       ],
     ),

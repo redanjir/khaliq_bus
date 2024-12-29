@@ -20,7 +20,7 @@ class BlueTextField extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(name, style: labelTextStyle,),
+            Text(name, style: Styles.labelTextStyle,),
             const SizedBox(height: 5,),
             TextFormField(
               controller: controller,
@@ -28,18 +28,18 @@ class BlueTextField extends StatelessWidget {
               decoration:  InputDecoration(
                 floatingLabelBehavior: FloatingLabelBehavior.never,
                 labelText: name,
-                labelStyle: BodyTextStyle,
+                labelStyle: Styles.BodyTextStyle,
                 focusedBorder: const OutlineInputBorder(
-                  borderSide: BorderSide(width: 3, color: blue)
+                  borderSide: BorderSide(width: 3, color: Styles.blue)
                 ),
                 enabledBorder: const OutlineInputBorder(
-                  borderSide: BorderSide(width: 3, color: blue)
+                  borderSide: BorderSide(width: 3, color: Styles.blue)
                 ),
                 errorBorder: const OutlineInputBorder(
-                  borderSide: BorderSide(width: 3, color: red)
+                  borderSide: BorderSide(width: 3, color: Styles.red)
                 ),
                 focusedErrorBorder: const OutlineInputBorder(
-                  borderSide: BorderSide(width: 3, color: red)
+                  borderSide: BorderSide(width: 3, color: Styles.red)
                 ),
               ),
               validator: (value) {

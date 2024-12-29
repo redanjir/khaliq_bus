@@ -24,7 +24,7 @@ class GridCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       child: Card(
-        color: Colors.lightBlueAccent[50],
+        color: Theme.of(context).colorScheme.primary,
         elevation: 5,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
@@ -61,7 +61,7 @@ class GridCard extends StatelessWidget {
                         end: FractionalOffset.bottomCenter,
                         colors: [
                           Colors.grey.withOpacity(0.0),
-                          blue.withOpacity(0.5)
+                          Styles.blue.withOpacity(0.5)
                         ],
                     )),
                   ),
@@ -69,7 +69,7 @@ class GridCard extends StatelessWidget {
               ),
             ),
             //Title here
-            Text(title, style: labelTextStyle,),
+            Text(title, style: Styles.labelTextStyle,),
           ],
         ),
       ),

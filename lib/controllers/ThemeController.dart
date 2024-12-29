@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:khaliq_bus/theme.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ThemeController extends GetxController {
@@ -24,6 +25,9 @@ class ThemeController extends GetxController {
   //Toggle the state of isDarkMode
   void toggleTheme() async {
     _isDarkMode.value = !_isDarkMode.value;
+    Get.changeTheme(_isDarkMode.value ? darkMode : lightMode);
+
+    //Save the isDark to shared preferences
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     await prefs.setBool('isDark', _isDarkMode.value);
   }

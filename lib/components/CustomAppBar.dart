@@ -21,15 +21,15 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget{
   Widget build(BuildContext context) {
     return AppBar(
       shape: const Border(
-        bottom: BorderSide(color: gray),
+        bottom: BorderSide(color: Styles.gray),
       ),
       centerTitle: true,
-      title:  Obx(()=> Text(title, style: TextStyle(color: themeController.isDarkMode ? black : darkblue),)),
+      title: Text(title, style: Styles.AppBarTextStyle,),
       automaticallyImplyLeading: false,
       leading: Builder(
         builder: (context) {
           return IconButton(
-            icon: const Icon(Icons.menu, color: darkblue,),
+            icon: const Icon(Icons.menu, color: Styles.darkblue,),
             onPressed: () {
               Scaffold.of(context).openDrawer();
             },

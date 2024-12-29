@@ -37,7 +37,7 @@ class _LoginPageState extends State<LoginPage> {
         appBar: AppBar(
           automaticallyImplyLeading: false,
           title:  Center(
-            child: signUp ?  Text('Sign Up', style: AppBarTextStyle,) :  Text('Login', style: AppBarTextStyle,)
+            child: signUp ?  Text('Sign Up', style: Styles.AppBarTextStyle,) :  Text('Login', style: Styles.AppBarTextStyle,)
           ),
           elevation: 0,
           backgroundColor: Colors.transparent,
@@ -97,15 +97,15 @@ class _LoginPageState extends State<LoginPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         signUp 
-                        ? const Text('Already have an account?', style: BodyTextStyle,) 
-                        : const Text('Don\'t have an account?', style: BodyTextStyle,),
+                        ? const Text('Already have an account?', style: Styles.BodyTextStyle,) 
+                        : const Text('Don\'t have an account?', style: Styles.BodyTextStyle,),
                        
                         const SizedBox(width: 5,),
                        
                         InkResponse(
                           child: signUp 
-                          ? const Text('Login', style: LinkTextStyle,) 
-                          : const Text('Sign Up', style: LinkTextStyle,),
+                          ? const Text('Login', style: Styles.LinkTextStyle,) 
+                          : const Text('Sign Up', style: Styles.LinkTextStyle,),
                           onTap: (){
                             setState(() {
                               signUp = !signUp;

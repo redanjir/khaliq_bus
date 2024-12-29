@@ -12,9 +12,9 @@ class BlueButton extends StatelessWidget {
       width: 350,
       decoration: const BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(5)),
-        color: darkblue
+        color: Styles.darkblue
       ),
-      child:  Center(child: Text(text, style: ButtonTextStyle,)),
+      child:  Center(child: Text(text, style: Styles.ButtonTextStyle,)),
     );
   }
 }

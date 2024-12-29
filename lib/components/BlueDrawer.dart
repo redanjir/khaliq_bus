@@ -31,7 +31,7 @@ class _BlueDrawerState extends State<BlueDrawer> {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-       backgroundColor: darkblue,
+       backgroundColor: Styles.darkblue,
        child: ListView(
         padding: EdgeInsets.zero,
         children: [
@@ -39,20 +39,20 @@ class _BlueDrawerState extends State<BlueDrawer> {
              height: 150,
              child: DrawerHeader(
               decoration: const BoxDecoration(
-                color: blue,
+                color: Styles.blue,
               ),
               child: Row(
                 children: [
-                  const Icon(Icons.account_circle, size: 60, color: darkblue,),
+                  const Icon(Icons.account_circle, size: 60, color: Styles.darkblue,),
                   const SizedBox(width: 20,),
-                  Text(displayName ?? "Guest", style: DrawerHeaderTextStyle,),
+                  Text(displayName ?? "Guest", style: Styles.DrawerHeaderTextStyle,),
                 ],
               )
             ),
            ),
           ListTile(
-            leading: const Icon(Icons.home, color: white,),
-            title: const Text('Home', style: ButtonTextStyle,),
+            leading: const Icon(Icons.home, color: Styles.white,),
+            title: const Text('Home', style: Styles.ButtonTextStyle,),
             onTap: () {
               navController.selectedIndex.value = 0;
               Get.toNamed("/home");
@@ -83,8 +83,8 @@ class _BlueDrawerState extends State<BlueDrawer> {
           //   },
           // ),
           ListTile(
-            leading: const Icon(Icons.person, color: white,),
-            title: const Text('Profile', style: ButtonTextStyle,),
+            leading: const Icon(Icons.person, color: Styles.white,),
+            title: const Text('Profile', style: Styles.ButtonTextStyle,),
             onTap: () {
               navController.selectedIndex.value = 4;
               Get.toNamed("/profile");
@@ -99,15 +99,15 @@ class _BlueDrawerState extends State<BlueDrawer> {
           //   },
           // ),
           ListTile(
-            leading: const Icon(Icons.dark_mode, color: white,),
-            title: const Text('Dark mode', style: ButtonTextStyle,),
+            leading: const Icon(Icons.dark_mode, color: Styles.white,),
+            title: const Text('Dark mode', style: Styles.ButtonTextStyle,),
             onTap: () async{
              themeController.toggleTheme();
             },
           ),
           ListTile(
-            leading: const Icon(Icons.logout, color: white,),
-            title: const Text('Logout', style: ButtonTextStyle,),
+            leading: const Icon(Icons.logout, color: Styles.white,),
+            title: const Text('Logout', style: Styles.ButtonTextStyle,),
             onTap: () {
               navController.selectedIndex.value = 0;
               FirebaseAuthService().signOut();

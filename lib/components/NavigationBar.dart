@@ -16,7 +16,7 @@ class AppNavigationBar extends StatelessWidget {
     return Obx(
       ()=> Container(
         decoration: const BoxDecoration(
-          border: Border(top: BorderSide(color: gray))
+          border: Border(top: BorderSide(color: Styles.gray))
         ),
         child: NavigationBar(
           //Hiding the label for better UX
@@ -34,22 +34,22 @@ class AppNavigationBar extends StatelessWidget {
           destinations:  [
             NavigationDestination(
               icon: Icon(Icons.home, 
-              color: navController.selectedIndex.value == 0 ? darkblue : blue ,), label: 'Home'),
+              color: navController.selectedIndex.value == 0 ? Styles.darkblue : Styles.blue ,), label: 'Home'),
             NavigationDestination(
               icon: Icon(Icons.search,
-              color: navController.selectedIndex.value == 1 ? darkblue : blue ,), label: 'Search'),
+              color: navController.selectedIndex.value == 1 ? Styles.darkblue : Styles.blue ,), label: 'Search'),
             NavigationDestination(
              icon: Icon(Icons.favorite, 
-             color: navController.selectedIndex.value == 2 ? darkblue : blue ,), label: 'Favourites'),
+             color: navController.selectedIndex.value == 2 ? Styles.darkblue : Styles.blue ,), label: 'Favourites'),
             NavigationDestination(
              icon: Icon(Icons.directions_bus,
-             color: navController.selectedIndex.value == 3 ? darkblue : blue ,), label: 'Nearby'),
+             color: navController.selectedIndex.value == 3 ? Styles.darkblue : Styles.blue ,), label: 'Nearby'),
             NavigationDestination(
              icon: Icon(Icons.person,
-             color: navController.selectedIndex.value == 4 ? darkblue : blue ,), label: 'Profile'),
+             color: navController.selectedIndex.value == 4 ? Styles.darkblue : Styles.blue ,), label: 'Profile'),
             NavigationDestination(
              icon: Icon(Icons.phone,
-             color: navController.selectedIndex.value == 5 ? darkblue : blue ,), label: 'About Us'),
+             color: navController.selectedIndex.value == 5 ? Styles.darkblue : Styles.blue ,), label: 'About Us'),
           ],
         ),
       ),

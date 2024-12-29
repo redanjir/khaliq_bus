@@ -18,14 +18,14 @@ class WelcomePage extends StatelessWidget {
               height: MediaQuery.of(context).size.height/2,
               width: MediaQuery.of(context).size.width,
               decoration: const BoxDecoration(
-                color: lightblue
+                color: Styles.lightblue
               ),
               child: const Column(
                 children: [
                   SizedBox(height: 100,),
-                  Text('Khaliq Bus', style: AppLogoTextStyle,),
+                  Text('Khaliq Bus', style: Styles.AppLogoTextStyle,),
                   SizedBox(height: 10,),
-                  Text('Ease your mind and travels with Khaliq Bus!', style: BodyTextStyle,),
+                  Text('Ease your mind and travels with Khaliq Bus!', style: Styles.BodyTextStyle,),
                 ],
               ),
             ),

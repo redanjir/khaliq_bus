@@ -70,7 +70,7 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(height: 15),
 
             //Welcome
-            Text('Hello ${displayName ?? 'Guest'}, welcome back!', style: TitleTextStyle,),
+            Text('Hello ${displayName ?? 'Guest'}, welcome back!', style: Styles.TitleTextStyle,),
 
             //Divider
             const SizedBox(height: 12),
