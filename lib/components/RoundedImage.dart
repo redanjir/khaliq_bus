@@ -1,31 +1,37 @@
-// ignore_for_file: file_names
-
 import 'package:flutter/material.dart';
 
 class RoundedImage extends StatelessWidget {
   const RoundedImage({
     super.key,
-    required this.img,
-    required this.height,
-    required this.width,
+    required this.imagepath,
+    required this.boxshadow,
   });
 
-  final String img;
-  final double height;
-  final double width;
+  final String imagepath;
+  final bool boxshadow;
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: height,
-      width: width,
-      child: Card(
-        clipBehavior: Clip.antiAliasWithSaveLayer,
-        semanticContainer: true,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(4),
+    return Container(
+      height: 120,
+      width: double.maxFinite,
+      // child: const Icon(Icons.favorite, size: 80, color: Colors.red,),
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage(imagepath),
+          fit: BoxFit.cover,
         ),
-        child: Image(image: AssetImage(img), fit: BoxFit.cover,)
+
+        boxShadow: [
+          boxshadow ?
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.5),
+            spreadRadius: 5,
+            blurRadius: 7,
+            offset: const Offset(0, 3), // changes position of shadow
+          ): const BoxShadow(),
+        ],
+        borderRadius: BorderRadius.circular(12),
       ),
     );
   }
