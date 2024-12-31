@@ -6,7 +6,6 @@ import 'package:khaliq_bus/components/CustomAppBar.dart';
 import 'package:khaliq_bus/components/NavigationBar.dart';
 import 'package:khaliq_bus/components/RoundedImage.dart';
 import 'package:khaliq_bus/services/launchUrl_service.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:khaliq_bus/style.dart';
 
 class AboutusPage extends StatelessWidget {
@@ -77,15 +76,25 @@ class AboutusPage extends StatelessWidget {
                 children: [
                   //Phone
                   InkWell(
-                    child: const Row(
+                    child: Row(
                       children: [
-                        Icon(Icons.phone),
-                        SizedBox(width: 20,),
+                        Icon(Icons.phone, color: Theme.of(context).colorScheme.tertiary,),
+                        const SizedBox(width: 20,),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text('+65 8788 4613'),
-                            Text('Mobile'),
+                            Text('+65 8788 4613', style: TextStyle(
+                              fontFamily: Styles.BodyFont,
+                              fontWeight: FontWeight.w500,
+                              fontSize: Styles.SmallTextSize,
+                              color: Theme.of(context).colorScheme.tertiary,
+                            ),),
+                            Text('Mobile', style: TextStyle(
+                              fontFamily: Styles.BodyFont,
+                              fontWeight: FontWeight.w300,
+                              fontSize: Styles.SmallTextSize,
+                              color: Theme.of(context).colorScheme.tertiary,
+                            ),),
                           ],
                         )
                       ],
@@ -97,15 +106,25 @@ class AboutusPage extends StatelessWidget {
 
                   //Email
                   InkWell(
-                    child: const Row(
+                    child:  Row(
                       children: [
-                        Icon(Icons.mail),
-                        SizedBox(width: 20,),
+                        Icon(Icons.mail,color: Theme.of(context).colorScheme.tertiary),
+                        const SizedBox(width: 20,),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text('abdulkhaliq4606'),
-                            Text('Email'),
+                            Text('abdulkhaliq4606', style: TextStyle(
+                              fontFamily: Styles.BodyFont,
+                              fontWeight: FontWeight.w500,
+                              fontSize: Styles.SmallTextSize,
+                              color: Theme.of(context).colorScheme.tertiary,
+                            ),),
+                            Text('Email', style: TextStyle(
+                              fontFamily: Styles.BodyFont,
+                              fontWeight: FontWeight.w300,
+                              fontSize: Styles.SmallTextSize,
+                              color: Theme.of(context).colorScheme.tertiary,
+                            ),),
                           ],
                         )
                       ],
@@ -140,9 +159,19 @@ class ParagraphAndTitle extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(title),
+        Text(title, style: TextStyle(
+          fontFamily: Styles.BodyFont,
+          fontWeight: FontWeight.bold,
+          fontSize: Styles.BodyTextSize,
+          color: Theme.of(context).colorScheme.tertiary,
+        ),),
         const SizedBox(height: 10,),
-        Text(paragraph),
+        Text(paragraph, style: TextStyle(
+          fontFamily: Styles.BodyFont,
+          fontWeight: FontWeight.w300,
+          fontSize: Styles.SmallTextSize,
+          color: Theme.of(context).colorScheme.tertiary,
+        ),),
       ],
     );
   }

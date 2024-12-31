@@ -58,7 +58,12 @@ class GridCard extends StatelessWidget {
               ),
             ),
             //Title here
-            Text(title, style: Styles.labelTextStyle,),
+            Text(title, style: TextStyle(
+                fontFamily: Styles.BodyFont,
+                fontWeight: FontWeight.bold,
+                fontSize: Styles.SmallTextSize,
+                color: Theme.of(context).colorScheme.tertiary,
+            ),),
           ],
         ),
       ),

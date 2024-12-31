@@ -24,12 +24,17 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget{
         bottom: BorderSide(color: Styles.gray),
       ),
       centerTitle: true,
-      title: Text(title, style: Styles.AppBarTextStyle,),
+      title: Text(title, style: TextStyle(
+        fontFamily: Styles.BodyFont,
+        fontWeight: FontWeight.w600,
+        fontSize: Styles.MediumTextSize,
+        color: Theme.of(context).colorScheme.tertiary,
+      ),),
       automaticallyImplyLeading: false,
       leading: Builder(
         builder: (context) {
           return IconButton(
-            icon: const Icon(Icons.menu, color: Styles.darkblue,),
+            icon: Icon(Icons.menu, color: Theme.of(context).colorScheme.tertiary,),
             onPressed: () {
               Scaffold.of(context).openDrawer();
             },
