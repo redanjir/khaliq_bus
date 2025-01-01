@@ -47,6 +47,10 @@ dependencies:
   cached_network_image: ^3.3.1
   get_storage: ^2.1.1
   url_launcher: ^6.1.14
+  google_maps_flutter:
+  location: 
+  flutter_polyline_points: 
+  flutter_svg: 
   
 dev_dependencies:
   flutter_test:
