@@ -37,7 +37,7 @@ class _LoginPageState extends State<LoginPage> {
         appBar: AppBar(
           automaticallyImplyLeading: false,
           title:  Center(
-            child: signUp ?  Text('Sign Up', style: Styles.AppBarTextStyle,) :  Text('Login', style: Styles.AppBarTextStyle,)
+            child: signUp ?  const Text('Sign Up', style: Styles.AppBarTextStyle,) : const Text('Login', style: Styles.AppBarTextStyle,)
           ),
           elevation: 0,
           backgroundColor: Colors.transparent,

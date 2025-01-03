@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:khaliq_bus/components/BlueDrawer.dart';
 import 'package:khaliq_bus/components/CustomAppBar.dart';
 import 'package:khaliq_bus/components/NavigationBar.dart';
-import 'package:khaliq_bus/style.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -14,7 +13,7 @@ class ProfilePage extends StatelessWidget {
  return SafeArea(
       child: Scaffold(
         appBar: CustomAppBar(title: 'Profile'),
-        drawer: BlueDrawer(),
+        drawer: const BlueDrawer(),
         bottomNavigationBar: const AppNavigationBar(),
         body: const Text('Profile'),
       ),

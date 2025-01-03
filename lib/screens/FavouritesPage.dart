@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:khaliq_bus/components/BlueDrawer.dart';
 import 'package:khaliq_bus/components/CustomAppBar.dart';
 import 'package:khaliq_bus/components/NavigationBar.dart';
-import 'package:khaliq_bus/style.dart';
 
 class FavouritesPage extends StatelessWidget {
   const FavouritesPage({super.key});
@@ -14,7 +13,7 @@ class FavouritesPage extends StatelessWidget {
  return SafeArea(
       child: Scaffold(
         appBar: CustomAppBar(title: 'Favourites'),
-        drawer: BlueDrawer(),
+        drawer: const BlueDrawer(),
         bottomNavigationBar: const AppNavigationBar(),
         body: const Text('Favourites'),
       ),

@@ -51,6 +51,8 @@ dependencies:
   location: 
   flutter_polyline_points: 
   flutter_svg: 
+  getwidget: ^4.0.0
+  intl: ^0.18.0
   
 dev_dependencies:
   flutter_test:
@@ -78,6 +80,7 @@ flutter:
   assets:
       - assets/images/
       - assets/images/compressed/
+      - assets/images/scale/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

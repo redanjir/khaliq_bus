@@ -5,7 +5,6 @@ import 'package:khaliq_bus/components/BlueDrawer.dart';
 import 'package:khaliq_bus/components/CustomAppBar.dart';
 import 'package:khaliq_bus/components/NavigationBar.dart';
 import 'package:khaliq_bus/services/httpservice.dart';
-import 'package:khaliq_bus/style.dart';
 import 'package:khaliq_bus/utils/Debouncer.dart';
 // ignore: library_prefixes
 import '../models/BusStops.dart' as busStop;

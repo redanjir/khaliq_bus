@@ -19,11 +19,11 @@ class HttpService{
         final BusStops bs = busStopsFromJson(response.body);
         return bs.value;
       }else{
-        return null;
+        return [];
       }
     }catch(e){
       debugPrint('Error ${e.toString()}');
-      return null;
+      return [];
     }
   }
 
@@ -41,11 +41,11 @@ class HttpService{
         final BusArrival ba = busArrivalFromJson(response.body);
         return ba.services;
       }else{
-        return null;
+        return [];
       }
     }catch(e){
       debugPrint('Error ${e.toString()}');
-      return null;
+      return [];
     }
   }
 }
